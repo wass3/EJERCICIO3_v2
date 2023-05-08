@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class PasswordVerify {
+public class VerificaContrasenya {
     public static PasswordResult validaContrasenya(String contrasenya) {
         boolean esValido = false;
         String msg = "";
