@@ -79,9 +79,7 @@ class PasswordVerifyTest {
     public void test8(){
         String contrasenya = "hola12!";
         PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n" +
-                "La contrasenya ha de contenir almenys 2 numeros\n" +
-                "La contrasenya ha de contenir almenys una lletra majuscula\n" +
-                "La contrasenya ha de contenir almenys un caracter especial\n");
+                "La contrasenya ha de contenir almenys una lletra majuscula\n");
         PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
         assertEquals(resultadoEsperado, resultadoReal);
     }
