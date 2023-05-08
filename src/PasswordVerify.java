@@ -2,32 +2,29 @@ import java.util.ArrayList;
 
 public class PasswordVerify {
     public static PasswordResult validaContrasenya(String contrasenya) {
-        boolean esValido = false;
+        boolean esValido = true;
         String msg = "";
 
         if (!validaLongitud(contrasenya)) {
-            msg += "La contrasenya ha de tenir almenys 8 caràcters";
-        } else {
-            esValido = true;
+            msg += "La contrasenya ha de tenir almenys 8 caracters\n";
+            esValido = false;
         }
 
         if (!validaDosNums(contrasenya)) {
-            msg += "La contrasenya ha de contenir almenys 2 números";
-        } else {
-            esValido = true;
-        }
-
-        if (!validaCaracEspeciales(contrasenya)) {
-            msg += "La contrasenya ha de contenir almenys un caràcter especial";
-        } else {
-            esValido = true;
+            msg += "La contrasenya ha de contenir almenys 2 numeros\n";
+            esValido = false;
         }
 
         if (!validaMayusculas(contrasenya)) {
-            msg += "La contrasenya ha de contenir almenys una lletra majuscula";
-        } else {
-            esValido = true;
+            msg += "La contrasenya ha de contenir almenys una lletra majuscula\n";
+            esValido = false;
         }
+
+        if (!validaCaracEspeciales(contrasenya)) {
+            msg += "La contrasenya ha de contenir almenys un caracter especial\n";
+            esValido = false;
+        }
+
 
         return new PasswordResult(esValido, msg);
     }
@@ -74,5 +71,7 @@ public class PasswordVerify {
     public static boolean validaMayusculas(String contrasenya){
         return contrasenya.matches(".*[A-Z].*");
     }
+
+
 
 }
