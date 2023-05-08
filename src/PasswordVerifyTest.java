@@ -111,11 +111,10 @@ class PasswordVerifyTest {
         assertEquals(resultadoEsperado, resultadoReal);
     }
 
+    @Test
     public void test12(){
         String contrasenya = "holacaracolA";
-        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n" +
-                "La contrasenya ha de contenir almenys 2 numeros\n" +
-                "La contrasenya ha de contenir almenys una lletra majuscula\n" +
+        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de contenir almenys 2 numeros\n" +
                 "La contrasenya ha de contenir almenys un caracter especial\n");
         PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
         assertEquals(resultadoEsperado, resultadoReal);
