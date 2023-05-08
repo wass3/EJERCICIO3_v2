@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class PasswordVerify {
-    public static PasswordResult validaPassword(String contrasenya) {
+    public static PasswordResult validaContrasenya(String contrasenya) {
         boolean esValido = false;
         String msg = "";
 

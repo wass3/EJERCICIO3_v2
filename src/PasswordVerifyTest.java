@@ -11,7 +11,7 @@ class PasswordVerifyTest {
                 "caracteresLa contraseña tiene que contener al menos 2 númerosLa contraseña tiene que" +
                 "contener al menos una letra mayúsculaLa contraseña tiene que contener al menos un" +
                 "carácter especial");
-        PasswordResult resultadoReal = PasswordVerify.validaPassword(contraseña);
+        PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contraseña);
         assertEquals(resultadoEsperado, resultadoReal);
     }
 }
