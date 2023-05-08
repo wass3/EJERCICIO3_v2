@@ -1,42 +1,42 @@
 import java.util.ArrayList;
 
 public class PasswordVerify {
-    public static PasswordResult validaPassword(String password) {
+    public static PasswordResult validaPassword(String contrasenya) {
+        boolean esValido = false;
         String msg = "";
-        boolean isValid = false;
 
-        if (!validaLongitud(password)) {
+        if (!validaLongitud(contrasenya)) {
             msg += "La contrasenya ha de tenir almenys 8 caràcters";
         } else {
-            isValid = true;
+            esValido = true;
         }
 
-        if (!validaNumeros(password)) {
+        if (!validaDosNums(contrasenya)) {
             msg += "La contrasenya ha de contenir almenys 2 números";
         } else {
-            isValid = true;
+            esValido = true;
         }
 
-        if (!validaEspeciales(password)) {
+        if (!validaCaracEspeciales(contrasenya)) {
             msg += "La contrasenya ha de contenir almenys un caràcter especial";
         } else {
-            isValid = true;
+            esValido = true;
         }
 
-        if (!validaMayuscula(password)) {
+        if (!validaMayusculas(contrasenya)) {
             msg += "La contrasenya ha de contenir almenys una lletra majuscula";
         } else {
-            isValid = true;
+            esValido = true;
         }
 
-        return new PasswordResult(isValid, msg);
+        return new PasswordResult(esValido, msg);
     }
 
     public static boolean validaLongitud(String contrasenya) {
         return contrasenya.length() >= 8;
     }
 
-    public static boolean validaNumeros(String contrasenya) {
+    public static boolean validaDosNums(String contrasenya) {
         int contNumeros = 0;
         boolean esValida = false;
         for (int i = 0; i < contrasenya.length(); i++) {
@@ -52,12 +52,12 @@ public class PasswordVerify {
         return esValida;
     }
 
-    public static boolean validaEspeciales(String password) {
+    public static boolean validaCaracEspeciales(String contrasenya) {
         int contNumeros = 0;
         int caracteresEspeciales = 0;
         boolean esValida = false;
-        for (int i = 0; i < password.length(); i++) {
-            Character caracter = password.charAt(i);
+        for (int i = 0; i < contrasenya.length(); i++) {
+            Character caracter = contrasenya.charAt(i);
             if (Character.isDigit(caracter)) {
                 contNumeros++;
             } else if (!Character.isLetterOrDigit(caracter)) {
@@ -71,8 +71,8 @@ public class PasswordVerify {
         return esValida;
     }
 
-    public static boolean validaMayuscula(String password){
-        return password.matches(".*[A-Z].*");
+    public static boolean validaMayusculas(String contrasenya){
+        return contrasenya.matches(".*[A-Z].*");
     }
 
 }
