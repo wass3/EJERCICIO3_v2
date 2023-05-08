@@ -119,4 +119,67 @@ class PasswordVerifyTest {
         PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
         assertEquals(resultadoEsperado, resultadoReal);
     }
+
+    @Test
+    public void test13(){
+        String contrasenya = "ho12A!";
+        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n");
+        PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    public void test14(){
+        String contrasenya = "holacaracolaA!";
+        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n" +
+                "La contrasenya ha de contenir almenys 2 numeros\n" +
+                "La contrasenya ha de contenir almenys una lletra majuscula\n" +
+                "La contrasenya ha de contenir almenys un caracter especial\n");
+        PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    public void test15(){
+        String contrasenya = "holacaracola12!";
+        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n" +
+                "La contrasenya ha de contenir almenys 2 numeros\n" +
+                "La contrasenya ha de contenir almenys una lletra majuscula\n" +
+                "La contrasenya ha de contenir almenys un caracter especial\n");
+        PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    public void test16(){
+        String contrasenya = "holacaracola12A";
+        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n" +
+                "La contrasenya ha de contenir almenys 2 numeros\n" +
+                "La contrasenya ha de contenir almenys una lletra majuscula\n" +
+                "La contrasenya ha de contenir almenys un caracter especial\n");
+        PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    public void test17(){
+        String contrasenya = "holacaracola12A!";
+        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n" +
+                "La contrasenya ha de contenir almenys 2 numeros\n" +
+                "La contrasenya ha de contenir almenys una lletra majuscula\n" +
+                "La contrasenya ha de contenir almenys un caracter especial\n");
+        PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    public void test18(){
+        String contrasenya = "#P4blit0cl4v0uncl4vit0#";
+        PasswordResult resultadoEsperado = new PasswordResult(false, "La contrasenya ha de tenir almenys 8 caracters\n" +
+                "La contrasenya ha de contenir almenys 2 numeros\n" +
+                "La contrasenya ha de contenir almenys una lletra majuscula\n" +
+                "La contrasenya ha de contenir almenys un caracter especial\n");
+        PasswordResult resultadoReal = PasswordVerify.validaContrasenya(contrasenya);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
 }
